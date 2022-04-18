@@ -1,14 +1,16 @@
-import { ITask, IUser } from "shared/types";
+import { ITask, IUser, IUserInput } from "shared/types";
 import { v4 as uuid } from "uuid";
 
 import { ErrorMessages } from "./constants";
 import { TaskStatus } from "./types";
 
 class UserService {
+  private _taskService: TaskService;
   private _users: Record<string, IUser>;
   private _currentUser: IUser | undefined;
 
-  constructor() {
+  constructor(taskService: TaskService) {
+    this._taskService = taskService;
     this._users = {};
     this._currentUser = undefined;
   }
@@ -23,6 +25,7 @@ class UserService {
 
     const user = { uuid: uuid(), name };
     this._users[user.name] = user;
+    this._taskService.initialize(user.uuid);
 
     return user;
   }
@@ -36,6 +39,7 @@ class UserService {
     this._currentUser = value;
   }
 }
+
 class TaskService {
   public _tasks: Record<string, Record<string, ITask>> = {};
 
