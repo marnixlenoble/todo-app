@@ -9,6 +9,8 @@
   background-color: #102027;
   max-height: 1000px;
   width: 100%;
+  box-sizing: border-box;
+  max-width: 700px;
 }
 
 .Header {
@@ -21,4 +23,14 @@
   text-align: center;
   align-items: center;
   width: 100%;
+}
+
+#root {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
 }

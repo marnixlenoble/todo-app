@@ -3,10 +3,7 @@
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
   background-color: rgba(255, 255, 255, 0.13);
   border: 1px solid hsla(0, 0%, 100%, 0.1);
   border-radius: 5px;
@@ -14,7 +11,6 @@
   margin-bottom: 10px;
   width: 100%;
   box-sizing: border-box;
-  max-width: 500px;
 }
 
 .task-title {
