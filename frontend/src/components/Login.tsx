@@ -32,6 +32,7 @@ function Login() {
         <input
           className="text-field"
           type="text"
+          placeholder="Enter your username..."
           onChange={handleInputChange}
         ></input>
         <div className="button-container">
