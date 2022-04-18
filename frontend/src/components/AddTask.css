@@ -1,4 +1,5 @@
 .icon-button {
+  display: flex;
   background-color: rgba(255, 255, 255, 0);
   border: none;
   color: #eee;
@@ -6,6 +7,7 @@
   outline: none;
   box-sizing: border-box;
   align-items: center;
+  justify-content: center;
   text-align: center;
   border-radius: 20px;
   padding: 7px;
@@ -18,10 +20,15 @@
   background-color: rgba(255, 255, 255, 0.26);
 }
 
+.icon-button:disabled {
+  color: rgba(255, 255, 255, 0.09);
+  background-color: rgba(255, 255, 255, 0.0);
+}
+
 .fake-input {
   background-color: rgba(255, 255, 255, 0);
   border: none;
-  width: 90%;
+  width: 100%;
   color: #eee;
   color: hsla(0, 0%, 100%, 0.87);
   outline: none;

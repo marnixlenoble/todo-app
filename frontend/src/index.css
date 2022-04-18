@@ -85,7 +85,7 @@ input[type="checkbox"]:checked::before {
 .button {
   background-color: rgba(255, 255, 255, 0.13);
   color: #eee;
-  color: hsla(0, 0%, 100%, 0.87);
+  color: rgba(255, 255, 255, 0.87);
   border: 1px solid rgba(255, 255, 255, 0.16);
   padding: 7px 7px;
   border-radius: 5px;
@@ -100,6 +100,12 @@ input[type="checkbox"]:checked::before {
 
 .button:hover {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.button:disabled {
+  color: rgba(255, 255, 255, 0.30);
+  background-color: rgba(255, 255, 255, 0.09);
+  cursor: not-allowed;
 }
 
 ::-webkit-scrollbar {
