@@ -1,9 +1,9 @@
 import {
   ChangeEvent,
   useState,
-  MouseEvent,
   useEffect,
   useCallback,
+  FormEvent,
 } from "react";
 import { BsPlusLg } from "react-icons/bs";
 
@@ -32,7 +32,7 @@ function AddTask({ refreshTaskList }: { refreshTaskList: () => void }) {
     setTaskTitle(e.target.value);
   }
 
-  function handleAddTask(e: MouseEvent<HTMLButtonElement>) {
+  function handleAddTask(e: FormEvent<HTMLFormElement>) {
     post("/task/create", {
       title: taskTitle,
     })
@@ -47,7 +47,7 @@ function AddTask({ refreshTaskList }: { refreshTaskList: () => void }) {
   }
 
   return (
-    <div className="input">
+    <form onSubmit={handleAddTask} className="input">
       <input
         className=" fake-input"
         type="text"
@@ -55,14 +55,10 @@ function AddTask({ refreshTaskList }: { refreshTaskList: () => void }) {
         value={taskTitle}
         onChange={handleInputChange}
       ></input>
-      <button
-        className="icon-button"
-        disabled={!taskTitle}
-        onClick={handleAddTask}
-      >
+      <button className="icon-button" disabled={!taskTitle} type="submit">
         <BsPlusLg />
       </button>
-    </div>
+    </form>
   );
 }
 

@@ -1,4 +1,4 @@
-import { ChangeEvent, useState, MouseEvent } from "react";
+import { ChangeEvent, useState, FormEvent } from "react";
 import "./Login.css";
 
 import { useCurrentUser, useRequest } from "../hooks";
@@ -12,7 +12,8 @@ function Login() {
     setUsername(e.target.value);
   }
 
-  function handleLogin(e: MouseEvent<HTMLButtonElement>) {
+  function handleLogin(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
     post("/user/login", {
       username,
     })
@@ -22,22 +23,23 @@ function Login() {
       .catch((error) => {
         console.log(error);
       });
-    e.preventDefault();
   }
 
   return (
     <>
       <h2>Please login</h2>
-      <input
-        className="text-field"
-        type="text"
-        onChange={handleInputChange}
-      ></input>
-      <div className="button-container">
-        <button disabled={!username} className="button" onClick={handleLogin}>
-          Login
-        </button>
-      </div>
+      <form onSubmit={handleLogin}>
+        <input
+          className="text-field"
+          type="text"
+          onChange={handleInputChange}
+        ></input>
+        <div className="button-container">
+          <button type="submit" disabled={!username} className="button">
+            Login
+          </button>
+        </div>
+      </form>
     </>
   );
 }
