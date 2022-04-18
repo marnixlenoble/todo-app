@@ -6,7 +6,15 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-    "outDir": "/dist",
-    "moduleResolution": "node"
-  }
+    "outDir": "./dist",
+    "rootDir": "src",
+    "moduleResolution": "node",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+
 }
