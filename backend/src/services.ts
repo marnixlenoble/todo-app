@@ -1,7 +1,8 @@
-import { IUser } from "shared/types";
+import { ITask, IUser } from "shared/types";
 import { v4 as uuid } from "uuid";
 
 import { ErrorMessages } from "./constants";
+import { TaskStatus } from "./types";
 
 class UserService {
   private _users: Record<string, IUser>;
@@ -35,5 +36,48 @@ class UserService {
     this._currentUser = value;
   }
 }
+class TaskService {
+  public _tasks: Record<string, Record<string, ITask>> = {};
 
-export { UserService };
+  initialize(key: string) {
+    this._tasks[key] = {};
+    this.create(key, {
+      title: "“Create todo list",
+      status: TaskStatus.Done,
+    });
+  }
+
+  list(key: string): Array<ITask> {
+    const tasks = this._tasks[key];
+    return Object.values(tasks ?? {});
+  }
+
+  create(
+    key: string,
+    {
+      title,
+      status = TaskStatus.NotDone,
+    }: { title: string; status?: TaskStatus }
+  ): ITask {
+    const task = { uuid: uuid(), title, status };
+    this._tasks[key][task.uuid] = task;
+    return task;
+  }
+
+  update(
+    key: string,
+    task: { uuid: string; title?: string; status?: TaskStatus }
+  ): ITask {
+    if (!this._tasks[key][task.uuid])
+      throw new Error(ErrorMessages.ResourceNotFound);
+
+    this._tasks[key][task.uuid] = { ...this._tasks[key][task.uuid], ...task };
+    return this._tasks[key][task.uuid];
+  }
+
+  delete(userId: string, taskId: string): void {
+    delete this._tasks[userId][taskId];
+  }
+}
+
+export { UserService, TaskService };
