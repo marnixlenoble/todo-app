@@ -1,0 +1,9 @@
+{
+  "name": "shared",
+  "version": "0.0.1",
+  "description": "shared types",
+  "main": "index.js",
+  "author": "marnix le noble",
+  "license": "MIT",
+  "private": true
+}
