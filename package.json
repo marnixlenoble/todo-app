@@ -7,5 +7,12 @@
   "author": "marnix le noble <marnix.lenoble@gmail.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": ["frontend", "backend", "shared"]
+  "workspaces": ["frontend", "backend", "shared"],
+  "scripts": {
+    "dev:init": "yarn && cp frontend/.env.local.example frontend/.env.local && cp backend/.env.example backend/.env",
+    "dev": "yarn workspace backend dev & yarn workspace frontend start",
+    "build": "yarn workspace backend build && yarn workspace frontend build",
+    "start": "serve -s frontend/build & yarn workspace backend start",
+    "test": "yarn workspace backend test"
+  }
 }
