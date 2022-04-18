@@ -2,6 +2,7 @@ import { ITask } from "shared/types";
 import { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { useRequest } from "../hooks";
 import { TaskList } from "./TaskList";
+import { AddTask } from "./AddTask";
 
 function Dashboard() {
   const [tasks, setTasks] = useState<Array<ITask>>([]);
@@ -36,6 +37,7 @@ function Dashboard() {
         onChange={handleInputChange}
       ></input>
       <TaskList refreshTaskList={listTasks} tasks={tasks}></TaskList>
+      <AddTask refreshTaskList={listTasks}></AddTask>
     </div>
   );
 }

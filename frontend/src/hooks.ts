@@ -37,7 +37,7 @@ function useRequest() {
   );
 
   const get = useCallback(
-    (endpoint: string, queryParams: Record<string, string>) => {
+    (endpoint: string, queryParams: Record<string, string> = {}) => {
       const headers = user
         ? ({ username: user.name } as { username: string })
         : {};
