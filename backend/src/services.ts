@@ -20,8 +20,7 @@ class UserService {
   }
 
   create(name: string): IUser {
-    if (this.get(name))
-      throw new Error(ErrorMessages.ResourceAlreadyExists);
+    if (this.get(name)) throw new Error(ErrorMessages.ResourceAlreadyExists);
 
     const user = { uuid: uuid(), name };
     this._users[user.name] = user;

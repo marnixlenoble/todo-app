@@ -5,7 +5,7 @@ export interface ITask {
 }
 
 export interface IUser {
-  uuid: string
+  uuid: string;
   name: string;
 }
 

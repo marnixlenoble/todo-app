@@ -3,7 +3,13 @@ import "./TaskList.css";
 
 import { TaskItem } from "./TaskItem";
 
-function TaskList({ tasks, refreshTaskList }: { tasks: Array<ITask>, refreshTaskList: () => void }) {
+function TaskList({
+  tasks,
+  refreshTaskList,
+}: {
+  tasks: Array<ITask>;
+  refreshTaskList: () => void;
+}) {
   return (
     <div className="task-list">
       {tasks.map((task, index) => (

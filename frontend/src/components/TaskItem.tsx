@@ -52,7 +52,7 @@ function TaskItem({
           onChange={handleTaskStatus}
         ></input>
         <div className={done ? "line-through" : ""}>
-          {(index + 1).toString() + '. ' + task.title}
+          {(index + 1).toString() + ". " + task.title}
         </div>
       </div>
       <button className="icon-button" onClick={handleDeleteTask}>

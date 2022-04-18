@@ -85,7 +85,7 @@ input[type="checkbox"]:checked::before {
   background-color: rgba(255, 255, 255, 0.13);
   color: #eee;
   color: hsla(0, 0%, 100%, 0.87);
-  border: 1px solid  rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   padding: 7px 7px;
   border-radius: 5px;
 
@@ -98,9 +98,8 @@ input[type="checkbox"]:checked::before {
 }
 
 .button:hover {
-  background-color: rgba(255, 255, 255, 0.20);
+  background-color: rgba(255, 255, 255, 0.2);
 }
-
 
 ::-webkit-scrollbar {
   width: 20px;

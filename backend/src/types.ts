@@ -26,5 +26,5 @@ export interface DeleteTaskCommand {
 
 export enum TaskStatus {
   NotDone = "NOT_DONE",
-  Done = "DONE"
+  Done = "DONE",
 }
