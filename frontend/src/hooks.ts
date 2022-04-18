@@ -16,7 +16,7 @@ function useCurrentUser() {
   const dispatch = useAppDispatch();
   const user = useAppSelector(selectCurrentUser);
 
-  function setUser(user: IUser) {
+  function setUser(user: IUser | undefined) {
     dispatch(setUserAction(user));
   }
 

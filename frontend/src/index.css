@@ -92,7 +92,7 @@ input[type="checkbox"]:checked::before {
 
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
   font-size: 16px;
   cursor: pointer;
   float: left;
@@ -103,7 +103,7 @@ input[type="checkbox"]:checked::before {
 }
 
 .button:disabled {
-  color: rgba(255, 255, 255, 0.30);
+  color: rgba(255, 255, 255, 0.3);
   background-color: rgba(255, 255, 255, 0.09);
   cursor: not-allowed;
 }

@@ -35,10 +35,10 @@ function Dashboard() {
   }
 
   return (
-    <div className="Dashboard">
+    <div className="dashboard">
       <h2>Inbox</h2>
       <input
-        className="text-field SearchField"
+        className="text-field search-field"
         type="text"
         placeholder="Search..."
         value={searchKeyWord}

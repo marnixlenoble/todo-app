@@ -28,7 +28,7 @@ function Login() {
   return (
     <>
       <h2>Please login</h2>
-      <form onSubmit={handleLogin}>
+      <form className="login-form" onSubmit={handleLogin}>
         <input
           className="text-field"
           type="text"

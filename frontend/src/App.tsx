@@ -10,8 +10,8 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="Header">To-Do app</h1>
-      <div className="App">
+      <h1 className="header">To-Do app</h1>
+      <div className="app">
         {user && <Dashboard></Dashboard>}
         {!user && <Login></Login>}
       </div>

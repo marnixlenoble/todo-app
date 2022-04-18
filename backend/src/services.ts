@@ -45,7 +45,7 @@ class TaskService {
   initialize(key: string) {
     this._tasks[key] = {};
     this.create(key, {
-      title: "“Create todo list",
+      title: "Create todo list",
       status: TaskStatus.Done,
     });
   }
