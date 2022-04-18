@@ -1,8 +1,10 @@
-import { ITask } from "shared/types";
 import { ChangeEvent, useCallback, useEffect, useState } from "react";
+import { ITask } from "shared/types";
+
 import { useRequest } from "../hooks";
 import { TaskList } from "./TaskList";
 import { AddTask } from "./AddTask";
+import "./Dashboard.css";
 
 function Dashboard() {
   const [tasks, setTasks] = useState<Array<ITask>>([]);

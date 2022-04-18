@@ -1,0 +1,30 @@
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.13);
+  border: 1px solid hsla(0,0%,100%,.1);
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgb(0 0 0 / 10%), 0 6px 3px rgb(0 0 0 / 12%);
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 500px;
+}
+
+.task-title {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.line-through {
+  text-decoration-line: line-through;
+}

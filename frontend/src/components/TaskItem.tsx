@@ -4,6 +4,7 @@ import { ITask } from "shared/types";
 
 import { TaskStatus } from "../types";
 import { useRequest } from "../hooks";
+import "./TaskItem.css";
 
 function TaskItem({
   task,

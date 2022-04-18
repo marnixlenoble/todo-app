@@ -1,4 +1,5 @@
 import { ITask } from "shared/types";
+import "./TaskList.css";
 
 import { TaskItem } from "./TaskItem";
 

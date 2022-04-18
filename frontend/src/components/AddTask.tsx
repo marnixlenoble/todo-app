@@ -7,6 +7,7 @@ import {
 } from "react";
 import { BsPlusLg } from "react-icons/bs";
 
+import "./AddTask.css";
 import { useRequest } from "../hooks";
 
 function AddTask({ refreshTaskList }: { refreshTaskList: () => void }) {
