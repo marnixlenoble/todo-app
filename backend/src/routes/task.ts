@@ -63,7 +63,7 @@ router.post("/delete", function (req, res) {
 
   handler.handle(command);
 
-  res.send();
+  res.send({});
 });
 
 router.get("/random-name", function (req, res) {
@@ -71,7 +71,7 @@ router.get("/random-name", function (req, res) {
 
   const randomName = handler.handle();
 
-  res.send(randomName);
+  res.send({ randomName });
 });
 
 export default router;
