@@ -6,6 +6,7 @@ import {
   FormEvent,
 } from "react";
 import { BsPlusLg } from "react-icons/bs";
+import { FiRefreshCcw } from "react-icons/fi";
 
 import "./AddTask.css";
 import { useRequest } from "../hooks";
@@ -55,6 +56,9 @@ function AddTask({ refreshTaskList }: { refreshTaskList: () => void }) {
         value={taskTitle}
         onChange={handleInputChange}
       ></input>
+      <button className="icon-button" onClick={handleGetTaskName} type="button">
+        <FiRefreshCcw />
+      </button>
       <button className="icon-button" disabled={!taskTitle} type="submit">
         <BsPlusLg />
       </button>

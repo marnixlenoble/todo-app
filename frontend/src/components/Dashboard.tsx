@@ -29,6 +29,11 @@ function Dashboard() {
     setSearchKeyWord(e.target.value);
   }
 
+  function refreshTaskList() {
+    setSearchKeyWord("");
+    listTasks();
+  }
+
   return (
     <div className="Dashboard">
       <h2>Inbox</h2>
@@ -36,10 +41,11 @@ function Dashboard() {
         className="text-field SearchField"
         type="text"
         placeholder="Search..."
+        value={searchKeyWord}
         onChange={handleInputChange}
       ></input>
       <TaskList refreshTaskList={listTasks} tasks={tasks}></TaskList>
-      <AddTask refreshTaskList={listTasks}></AddTask>
+      <AddTask refreshTaskList={refreshTaskList}></AddTask>
     </div>
   );
 }

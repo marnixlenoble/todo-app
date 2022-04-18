@@ -8,11 +8,9 @@ import "./TaskItem.css";
 
 function TaskItem({
   task,
-  index,
   refreshTaskList,
 }: {
   task: ITask;
-  index: number;
   refreshTaskList: () => void;
 }) {
   const { post } = useRequest();
@@ -52,7 +50,7 @@ function TaskItem({
           onChange={handleTaskStatus}
         ></input>
         <div className={done ? "line-through" : ""}>
-          {(index + 1).toString() + ". " + task.title}
+          {task.index?.toString() + ". " + task.title}
         </div>
       </div>
       <button className="icon-button delete-button" onClick={handleDeleteTask}>

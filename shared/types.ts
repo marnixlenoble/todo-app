@@ -1,5 +1,6 @@
 export interface ITask {
   uuid: string;
+  index?: number;
   title: string;
   status: string;
 }

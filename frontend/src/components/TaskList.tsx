@@ -12,9 +12,8 @@ function TaskList({
 }) {
   return (
     <div className="task-list">
-      {tasks.map((task, index) => (
+      {tasks.map((task) => (
         <TaskItem
-          index={index}
           task={task}
           refreshTaskList={refreshTaskList}
           key={task.uuid}

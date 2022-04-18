@@ -52,7 +52,10 @@ class TaskService {
 
   list(key: string): Array<ITask> {
     const tasks = this._tasks[key];
-    return Object.values(tasks ?? {});
+    return Object.values(tasks ?? {}).map((task, index) => ({
+      ...task,
+      index: index + 1,
+    }));
   }
 
   create(
