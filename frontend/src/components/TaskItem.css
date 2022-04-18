@@ -13,6 +13,14 @@
   box-sizing: border-box;
 }
 
+.delete-button {
+  opacity: 0;
+}
+
+.task:hover .delete-button {
+  opacity: 1;
+}
+
 .task-title {
   display: flex;
   justify-content: left;

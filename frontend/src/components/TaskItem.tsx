@@ -55,7 +55,7 @@ function TaskItem({
           {(index + 1).toString() + ". " + task.title}
         </div>
       </div>
-      <button className="icon-button" onClick={handleDeleteTask}>
+      <button className="icon-button delete-button" onClick={handleDeleteTask}>
         <RiDeleteBin6Line />
       </button>
     </div>
