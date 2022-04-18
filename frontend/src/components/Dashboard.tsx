@@ -5,6 +5,7 @@ import { useRequest } from "../hooks";
 import { TaskList } from "./TaskList";
 import { AddTask } from "./AddTask";
 import "./Dashboard.css";
+import { Logout } from "./Logout";
 
 function Dashboard() {
   const [tasks, setTasks] = useState<Array<ITask>>([]);
@@ -46,6 +47,7 @@ function Dashboard() {
       ></input>
       <TaskList refreshTaskList={listTasks} tasks={tasks}></TaskList>
       <AddTask refreshTaskList={refreshTaskList}></AddTask>
+      <Logout></Logout>
     </div>
   );
 }
